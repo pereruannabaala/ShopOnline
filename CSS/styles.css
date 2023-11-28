@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-brand{
+    color:white;
+    font-weight:20px;
+}
+.footer{
+    width:100%;
+    text-align:center;
+    padding:30px 0;
+}
+
+.footer h1{
+    margin-bottom:25px;
+    margin-top:20px;
+    font-weight:600;
+}
+.text{
+    color:grey;
+    margin-top:2%;
+}
+.fa-users{
+    color:#f44336;  
+}
