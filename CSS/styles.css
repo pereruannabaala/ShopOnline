@@ -25,3 +25,116 @@
 .fa-users{
     color:#f44336;  
 }
+.about-col{
+    flex-basis:48%;
+    margin-top:10%;
+    margin-left:2%;
+    }
+.about-col img{
+        width:80%;
+        height: 95%;
+    }
+.about-col h1{
+    padding-top:0;
+    font-weight:bold;
+}
+.about-col p{
+    padding:15px 0 25px;
+}
+.github-btn{
+    display:inline-block;
+    margin-top:60px;
+    text-decoration: none;
+    color:#fff;
+    border:1px solid #fff;
+    padding:12px 34px;
+    font-size:13px;
+    background:transparent;
+    position:relative;
+    cursor:pointer;
+}
+.github-btn:hover{
+    border:1px solid #FFFF00;
+    background:#FFFF00;
+    transition:1s;
+    }
+.yellow-btn{
+    border: 1px solid #FFFF00;
+    background:transparent;
+    color:#FFFF00;
+}
+.yellow-btn:hover{
+    color:#fff;
+}
+
+.footer-drk{
+    background-color:black;
+    width:100%;
+    text-align:center;
+    padding:30px 0;
+    color:grey;
+}
+.shop{
+    width:80%;
+    margin:auto;
+    padding-top:80px;
+    padding-bottom:50px;
+}
+.shop-col{
+    flex-basis:48%;
+    padding:30px 2px;
+    }
+
+
+
+    /* My Account */
+    .header{
+        min-height: 100vh;
+        width: 100%;
+        background:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../images/signup.jpg") no-repeat fixed;
+        background-position:center;
+        background-size: cover;
+        position:relative;
+    }
+    .text-box{
+        width:90%;
+        color:#fff;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+    .text-box h1{
+        font-size:20px;
+        text-align:center;
+        font-weight:bold;
+    }
+    
+    .text-box p{
+        margin:10px 0 40px;
+        font-size: 14px;
+        color:#fff;
+        text-align:left;
+    }
+    .form-floating.mb-3{
+        color:black;
+    }
+    .form-floating{
+        color:black;
+    }
+    .form-check{
+        text-align:left;
+        font-weight:normal;
+        margin-top:2em;
+    }
+    .btn.btn-light{
+        float:left;
+        color:black;
+        font-weight:bold;
+        margin-top:2em;
+    }
+    .password{
+        text-align:left;
+        margin-top:2em;
+        color:white;
+    }
