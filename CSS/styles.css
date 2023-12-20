@@ -148,7 +148,7 @@
     }
     .container .title{
         font-weight: bold;
-        font-size: large;
+        font-size: larger;
     }
     svg{
         width:30px;
