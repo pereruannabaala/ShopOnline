@@ -33,6 +33,7 @@
 .about-col img{
         width:80%;
         height: 95%;
+        border-radius: 50%;
     }
 .about-col h1{
     padding-top:0;
@@ -41,7 +42,7 @@
 .about-col p{
     padding:15px 0 25px;
 }
-.github-btn{
+.shop-btn{
     display:inline-block;
     margin-top:60px;
     text-decoration: none;
@@ -52,8 +53,9 @@
     background:transparent;
     position:relative;
     cursor:pointer;
+    margin-bottom: 5%;
 }
-.github-btn:hover{
+.shop-btn:hover{
     border:1px solid #FFFF00;
     background:#FFFF00;
     transition:1s;
@@ -141,7 +143,12 @@
         max-width:90vw;
         margin:auto;
         text-align:center;
-           padding-top:10px;
+        padding-top:10px;
+        transition:transform .5s; 
+    }
+    .container .title{
+        font-weight: bold;
+        font-size: large;
     }
     svg{
         width:30px;
@@ -184,7 +191,14 @@
         position:fixed;
         inset:0 -400px 0 auto;
         display:grid;
-        grid-template-rows:70px 1fr 70px; 
+        grid-template-rows:70px 1fr 70px;
+        transition:.5s; 
+    }
+    body.showCart .cartTab{
+        inset:0 0 0 auto;
+    }
+    body.showCart .container{
+        transform:translateX(-250px);
     }
     .cartTab h1{
         padding: 20px;
