@@ -15,6 +15,36 @@
         <link rel="stylesheet" href="CSS/styles.css">
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">EyeCandy</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"style="color:white;">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html"style="color:white;">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="shop.html"style="color:white;">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"style="color:white;" href="account.html">My Account</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+        </nav>
+        
+        
         <div class="header">
             <div class="text-box">
                 <h1>My Account<h1>
@@ -26,12 +56,14 @@
                 <div class="form-floating">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
+                    <a href="password.html" style="color:white;"" >Forgot Password ?</a>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">Remember Me</label>
                 </div>
                 <button type="button" class="btn btn-light">Log In</button>
+                
             </div>
         </div>
         </section>
