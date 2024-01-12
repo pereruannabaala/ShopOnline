@@ -74,13 +74,15 @@ shoponline_folder
 
 ## Using The Flask Side Of The Project
 
-1. In your terminal, update your local repo with the changes seen in the PR:
+1. Merge the changese between the forks
+
+2. In your terminal, update your local repo with the changes seen in the PR:
 
     ```python
     $ git pull origin main
     ```
 
-2. Activate the virtualenv called **shoponline_venv**:
+3. Activate the virtualenv called **shoponline_venv**:
 
     ```python
     $ source shoponline_venv/bin/activate
@@ -89,22 +91,45 @@ shoponline_folder
     (shoponline_venv)$
     ```
 
-3. Install all project dependancies in your active virtualenv:
+4. Install all project dependancies in your active virtualenv:
 
     ```python
     (shoponline_venv)$ pip3 install -r requirements.txt
     ```
 
-4. Start your Flask server:
+5. Start your Flask server:
 
     ```python
     (shoponline_venv)$ flask run
     ```
 
-5. Copy and paste this link in a web browser
+6. Copy and paste this link in a web browser
 
     ```python
     http://127.0.0.1:5000
 
     # This link is available in your terminal
     ```
+
+
+# Technologies Used
+
+- Flask microframework
+- Daraja API for MPesa
+- Stripe
+- Flask login to manage user authentication
+- Flask migrate to handle database migration
+- Flask SQLAlchemy for database management
+
+# Features
+
+- User authentication
+- Add product(s) to cart
+- MPesa/Card payment
+
+
+# Additional Information
+
+| Database Design | UI Design | Live Link |
+| --------------- | --------- | --------- |
+| [DrawSQL](https://drawsql.app/teams/gitau-harrison/diagrams/sample-ecommerce-app) | [Figma]() | [Render]() |
