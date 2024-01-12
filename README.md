@@ -97,13 +97,27 @@ shoponline_folder
     (shoponline_venv)$ pip3 install -r requirements.txt
     ```
 
-5. Start your Flask server:
+5. Create and update a `.env` file in the root directory:
+
+    ```python
+
+    # This creates a .env file with the environment variables seen in .env-template file
+    (shoponline_venv)$ cp .env-template .env
+
+    # Update values in the .env file
+    # For example:
+    # Run this in your terminal:
+    # python3 -c 'import secrets; print(secrets.token_hex(16))'
+    # Copy and paste the value in .env's SECRET_KEY
+    ```
+
+6. Start your Flask server:
 
     ```python
     (shoponline_venv)$ flask run
     ```
 
-6. Copy and paste this link in a web browser
+7. Copy and paste this link in a web browser
 
     ```python
     http://127.0.0.1:5000
@@ -120,12 +134,17 @@ shoponline_folder
 - Flask login to manage user authentication
 - Flask migrate to handle database migration
 - Flask SQLAlchemy for database management
+- Twilio Sendgrid
+- Twilio Verify
 
 # Features
 
 - User authentication
 - Add product(s) to cart
 - MPesa/Card payment
+- User verification using email address
+- Two-factor authentication using Phone number
+- Error handling
 
 
 # Additional Information

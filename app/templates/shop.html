@@ -4,7 +4,7 @@
 
 <div class="container">
   <header>
-      <div class="title">PRODUCT LIST</div>
+      <div class="title">{{ title }}</div>
       <div class="icon-cart">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
@@ -12,96 +12,99 @@
           <span>0</span>
       </div>    
   </header>
-</div>
+
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card h-100">
-      <img src=" {{ url_for('static', filename='images/retro.jpg') }} " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Metallic sunglasses</h5>
-        <p class="card-text">Ksh 2500</p>
+  <!-- Are there products in the db? -->
+  {% if products %}
+    {% for product in products %}
+      <div class="col">
+        <div class="card h-100">
+          <img src=" {{ url_for('static', filename='{{ product.image }}') }} " class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.currency }} {{ product.price }} </p>
+            <p class="card-text">
+              In Stock: 
+              {% if product.quantity > 0 %}
+                <span style="color: red;"> {{ product.quantity }}  </span>
+              {% else %}
+                <span style="color: red;"> {{ product.quantity }}  </span>
+              {% endif %}
+            </p>
+          </div>
+          <button class="addCart">
+            <a href="{{ url_for('view_product', id=product.id) }}">View Product</a>        
+          </button>
+        </div>
       </div>
-      <button class="addCart">Add to Cart</button>
+    {% endfor %}
+
+  <!-- There are no products in the db -->
+  {% else %}
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src=" {{ url_for('static', filename='images/retro.jpg') }} " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Metallic sunglasses</h5>
+          <p class="card-text">Ksh 2500</p>
+        </div>
+        <button class="addCart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src=" {{ url_for('static', filename='images/rectangle.jpg') }} " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Rectangle glasses</h5>
+          <p class="card-text">Ksh 2000</p>
+        </div>
+        <button class="addCart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src=" {{ url_for('static', filename='images/round.jpg') }} " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Round glasses</h5>
+          <p class="card-text">Ksh 2500</p>
+        </div>
+        <button class="addCart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src=" {{ url_for('static', filename='images/cateyes.jpg') }} " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cat Eyes</h5>
+          <p class="card-text">Ksh 2300</p>
+        </div>
+        <button class="addCart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src=" {{ url_for('static', filename='images/wideeyes.jpg') }} " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Wide Eyes</h5>
+          <p class="card-text">Ksh 2700</p>
+        </div>
+        <button class="addCart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src=" {{ url_for('static', filename='images/clear.jpg') }} " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Clear Frames</h5>
+          <p class="card-text">Ksh 2500</p>
+        </div>
+        <button class="addCart">Add to Cart</button>
+      </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src=" {{ url_for('static', filename='images/rectangle.jpg') }} " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Rectangle glasses</h5>
-        <p class="card-text">Ksh 2000</p>
-      </div>
-      <button class="addCart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src=" {{ url_for('static', filename='images/round.jpg') }} " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Round glasses</h5>
-        <p class="card-text">Ksh 2500</p>
-      </div>
-      <button class="addCart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src=" {{ url_for('static', filename='images/cateyes.jpg') }} " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Cat Eyes</h5>
-        <p class="card-text">Ksh 2300</p>
-      </div>
-      <button class="addCart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src=" {{ url_for('static', filename='images/wideeyes.jpg') }} " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Wide Eyes</h5>
-        <p class="card-text">Ksh 2700</p>
-      </div>
-      <button class="addCart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src=" {{ url_for('static', filename='images/clear.jpg') }} " class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Clear Frames</h5>
-        <p class="card-text">Ksh 2500</p>
-      </div>
-      <button class="addCart">Add to Cart</button>
-    </div>
-  </div>
+
+  {% endif %}
+
 </div>
-
-<div class="cartTab">
-  <h1>Shopping Cart</h1>
-  <div class="listCart">
-    <div class="item">
-      <div class="image">
-        <img src=" {{ url_for('static', filename='images/retro.jpg') }} " alt="">
-      </div>
-      <div class="name">
-        Metallic glasses
-      </div>
-      <div class="totalPrice">
-        Ksh 2500
-      </div>
-      <div class="quantity">
-        <span class="minus"><</span>
-        <span>1</span>
-        <span class="plus">></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="btn">
-    <button class="close">CLOSE</button>
-    <button class="checkOut">CHECK OUT</button>
-  </div>
-</div>
-
 {% endblock %}
