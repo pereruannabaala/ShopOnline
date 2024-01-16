@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+
+    <h1 class="mb-4"> {{ title }} </h1>
+    <p>
+        I am a<b>{{ current_user.type }}</b>
+    </p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

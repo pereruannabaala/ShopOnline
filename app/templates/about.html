@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+
+<div class="row">
+  <div class="about-col">
+      <h1 class="mb-4">{{ title }}</h1>
+      <p>Welcome to our premier eyeglasses selling platform! We're dedicated to transforming the way you experience vision by offering an extensive range of stylish and functional eyewear. From classic frames to cutting-edge designs, we strive to cater to every taste, need, and personality. Our platform isn't just about selling glasses; it's about providing a seamless, personalized experience where you can find the perfect pair that complements your unique style and enhances your vision.</p>
+      <a href="{{ url_for('shop') }}" class="shop-btn yellow-btn">Shop Eyewear</a>
+  </div>
+  <div class="about-col">
+      <img src=" {{ url_for('static', filename='images/float.jpg') }} ">
+  </div>
+</div>
+
+{% endblock %}
